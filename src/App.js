@@ -70,7 +70,7 @@ function App() {
           textAlign: 'center',
         }}
       >
-        {isLogin && <h2>{JSON.stringify(userInfo)}</h2>}
+        Hüseyin SARI - 2022
       </Footer>
     </Layout>
   );
