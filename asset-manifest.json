@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/techcareer-sunum/static/css/main.369bd643.css",
+    "main.js": "/techcareer-sunum/static/js/main.40fee424.js",
+    "static/js/787.3993fb25.chunk.js": "/techcareer-sunum/static/js/787.3993fb25.chunk.js",
+    "index.html": "/techcareer-sunum/index.html",
+    "main.369bd643.css.map": "/techcareer-sunum/static/css/main.369bd643.css.map",
+    "main.40fee424.js.map": "/techcareer-sunum/static/js/main.40fee424.js.map",
+    "787.3993fb25.chunk.js.map": "/techcareer-sunum/static/js/787.3993fb25.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.369bd643.css",
+    "static/js/main.40fee424.js"
+  ]
+}
