@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { Button, Modal, Form, Input } from 'antd';
@@ -18,12 +18,16 @@ function MyForm() {
     };
 
     useEffect(()=>{
-        if(wrongPassCount>1) error();;
-    },[wrongPassCount])
+        if(wrongPassCount>1){
+            error();
+        } 
+    },[wrongPassCount]);
 
     useEffect(()=>{
-        if(isLogin === true) navigate("/");
-    },[isLogin])
+        if(isLogin === true){
+            navigate("/");
+        } 
+    },[isLogin]);
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);

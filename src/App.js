@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import React from 'react';
 import { useUserContext } from "./context/UserContext";
 import { Layout, Menu } from 'antd';
@@ -15,7 +15,7 @@ const { Header, Content, Footer } = Layout;
 
 function App() {
 
-  const { isLogin ,userInfo} = useUserContext();
+  const { isLogin } = useUserContext();
 
   const menu_items = [
     { label: <Link to='/customers'>Customers</Link>, key: '2' },
@@ -52,15 +52,15 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Customers />} ></Route>
-            <Route path='customers' element={<Customers />} ></Route>
-            <Route path='customers/update' element={<Update />}>
+            <Route path='/customers' element={<Customers />} ></Route>
+            <Route path='/customers/update' element={<Update />}>
               <Route path=":id" element={<Update />} />
             </Route>
-            <Route path='customers/detail' element={<Detail />}>
+            <Route path='/customers/detail' element={<Detail />}>
               <Route path=":id" element={<Detail />} />
             </Route>
-            <Route path='addcustomers' element={<AddCustomers />} ></Route>
-            <Route path='login' element={<Login />} ></Route>
+            <Route path='/addcustomers' element={<AddCustomers />} ></Route>
+            <Route path='/login' element={<Login />} ></Route>
           </Routes>
 
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Routes, Link, Outlet, Navigate, redirect, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Table, Button, Modal } from "antd";
 import { DeleteOutlined, FormOutlined, InfoCircleOutlined } from '@ant-design/icons';

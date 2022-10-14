@@ -4,18 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter ,HashRouter } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <BrowserRouter>
+    <HashRouter>
       <UserProvider>
         <App />
       </UserProvider>
-    </BrowserRouter>
+    </HashRouter>
   </>
 );
 

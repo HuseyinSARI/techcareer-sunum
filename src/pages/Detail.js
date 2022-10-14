@@ -62,7 +62,7 @@ function Detail() {
                 setLoading(false)
             })
             .catch(err=> console.log(err));                    
-    }, [])
+    }, []);
 
     const onTab1Change = (key) => {
         setActiveTabKey1(key);

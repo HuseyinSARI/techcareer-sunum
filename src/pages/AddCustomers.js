@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Modal, Space, Form, Input } from 'antd';
+import { Button, Modal, Form, Input } from 'antd';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
 
 function AddCustomer() {
 
-  const [custumer, setCustomer] = useState({
+  const [custumer] = useState({
     id: "None",
     companyName: "None",
     contactName: "None",
@@ -21,7 +21,6 @@ function AddCustomer() {
     }
   });
 
-  let { id } = useParams();
   const navigate = useNavigate();
   const [form] = Form.useForm();
 
@@ -84,7 +83,7 @@ function AddCustomer() {
       country: custumer.address.country,
       phone: custumer.address.phone,
     });
-  }, [custumer])
+  }, [custumer]);
 
 
 

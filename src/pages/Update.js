@@ -81,7 +81,7 @@ function Update() {
 
   useEffect(() => {
     getCustomer();
-  }, [])
+  }, []);
 
   useEffect(() => {
     form.setFieldsValue({
@@ -96,10 +96,7 @@ function Update() {
       country: custumer.address.country,
       phone: custumer.address.phone,
     });
-  }, [custumer])
-
-
-
+  }, [custumer]);
 
 
   return (<>
