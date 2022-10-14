@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Modal, Space, Form, Input } from 'antd';
+import { Button, Modal, Form, Input } from 'antd';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-
 
 function Update() {
 
@@ -31,8 +30,8 @@ function Update() {
     axios.get(`https://northwind.vercel.app/api/customers/${id}`)
       .then(res => {
         setCustomer(res.data);
-        console.log(res.data);
-      });
+      })
+      .catch(err=> console.log(err));
   }
 
   const success = () => {

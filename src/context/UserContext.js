@@ -5,6 +5,7 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
 
     const [isLogin, setIsLogin] = useState(false);
+    const [wrongPassCount, setWrongPassCount] = useState(0)
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: "",
@@ -16,14 +17,17 @@ export const UserProvider = ({ children }) => {
     }
 
 
+    // user info başarılı şeklide girilise login true çekiliyor ya da yanlış giriş sayısı arttırılıyor.
     const checkUser = () => {
         if (validateUser.email === userInfo.email && validateUser.password === userInfo.password) {
             setIsLogin(true);
+        }else{
+            setWrongPassCount(wrongPassCount+1);
         }
     }
 
     useEffect(() => {
-        checkUser();
+        checkUser();        
     }, [userInfo]);
 
 
@@ -31,6 +35,7 @@ export const UserProvider = ({ children }) => {
         isLogin,
         userInfo,
         setUserInfo,
+        wrongPassCount
     }
 
     return (

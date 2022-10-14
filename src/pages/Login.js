@@ -1,9 +1,6 @@
-import { Button, Modal, Checkbox, Form, Input } from 'antd';
-
+import { Modal } from 'antd';
 import React, { useState, useEffect } from 'react';
-import { Formik, useFormik } from 'formik';
 import { useUserContext } from "../context/UserContext";
-import * as Yup from 'yup';
 import MyForm from '../components/MyForm';
 
 function Login() {
@@ -26,7 +23,6 @@ function Login() {
 
 
 
-
     return (
         <>
             <Modal
@@ -37,8 +33,6 @@ function Login() {
                 footer={null}
             >
                 {isLogin ? JSON.stringify(userInfo) : <MyForm />}
-                
-
             </Modal>
         </>
     );

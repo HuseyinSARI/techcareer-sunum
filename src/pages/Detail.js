@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { Card } from "antd";
 
 
-
 function Detail() {
 
     const [detail, setDetail] = useState({
@@ -22,6 +21,7 @@ function Detail() {
         }
     });
 
+    const [loading, setLoading] = useState(true);
     const [activeTabKey1, setActiveTabKey1] = useState('tab1');
 
 
@@ -59,18 +59,15 @@ function Detail() {
         axios.get(`https://northwind.vercel.app/api/customers/${id}`)
             .then(res => {
                 setDetail(res.data);
-                console.log(res.data);
-            });
-                    
+                setLoading(false)
+            })
+            .catch(err=> console.log(err));                    
     }, [])
 
     const onTab1Change = (key) => {
         setActiveTabKey1(key);
     };
 
-
-
-    console.log(detail);
 
     return (<>
         <Card
@@ -84,6 +81,7 @@ function Detail() {
             onTabChange={(key) => {
                 onTab1Change(key);
             }}
+            loading={loading}
         >
             {contentList[activeTabKey1]}
         </Card>

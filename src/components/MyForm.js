@@ -1,44 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
-
-
-
 import { Button, Modal, Form, Input } from 'antd';
-
-
 
 function MyForm() {
 
-    const { isLogin, setUserInfo, checkUser } = useUserContext();
+    const { isLogin, setUserInfo ,wrongPassCount  } = useUserContext();
     let navigate = useNavigate();
     const [form] = Form.useForm();
 
-
-    const onFinish = (values) => {
-        console.log('Submit-Success:', values);
-        
+    // form başarılı gönderildiğinde contexdeki user infoyu set liyor
+    const onFinish = (values) => {        
         setUserInfo({
             email: values.email,
             password: values.password,
-        })        
-
+        })
     };
 
-    useEffect(() => {
-        console.log("isLogin : ", isLogin);
-        
-        if (isLogin) {
-            navigate("/");
-        }
-    }, [isLogin])
+    useEffect(()=>{
+        if(wrongPassCount>1) error();;
+    },[wrongPassCount])
 
-
+    useEffect(()=>{
+        if(isLogin === true) navigate("/");
+    },[isLogin])
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
-
 
     const onFill = () => {
         form.setFieldsValue({
@@ -50,7 +39,7 @@ function MyForm() {
     const error = () => {
         Modal.error({
             title: 'Wrong e-mail or password',
-            content: 'Please try again!',
+            content: `Wrong count : ${wrongPassCount - 1}`,
         });
     };
 

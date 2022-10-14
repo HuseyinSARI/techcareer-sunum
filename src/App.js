@@ -1,19 +1,16 @@
 import 'antd/dist/antd.css';
 import React from 'react';
-import { UserProvider, useUserContext } from "./context/UserContext";
-import { Breadcrumb, Layout, Menu } from 'antd';
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import { useUserContext } from "./context/UserContext";
+import { Layout, Menu } from 'antd';
+import { Link, Route, Routes } from "react-router-dom";
 
 import Login from "./pages/Login";
-import Home from './pages/Home';
 import Customers from './pages/Customers';
 import AddCustomers from './pages/AddCustomers';
 import Update from "./pages/Update";
 import Detail from './pages/Detail';
 
 const { Header, Content, Footer } = Layout;
-
-
 
 
 function App() {
